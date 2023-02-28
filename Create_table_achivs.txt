@@ -1,0 +1,16 @@
+CREATE TABLE achivs (
+	id SERIAL,
+	animal_name text,
+	animal_type text,
+	animal_color text,
+	age int,
+	sex bool,
+	health int,
+	hunger int,
+	craving int,
+	mood int,
+	vivacity int,
+	cleanliness int,
+	upbringing int
+)
+
