@@ -13,6 +13,12 @@ class Animal:
         self.cleanliness = 0
         self.upbringing = 0
 
+def character_selection():
+    type = input("Введите вид персонажа: ")
+    name = input("Введите имя персонажа: ");
+
+
+
 
 
 
