@@ -1,24 +1,16 @@
+import time
 import datetime
 
-# vivacity = 10
-# health = 80
 
-current_date_time = datetime.datetime.now()
-current_time = current_date_time.time()
-print(current_time)
+def sleep_metod(self):
+    time_1 = datetime.datetime.now()
+    if self.vivacity >= 30 and time_1 > 6 and time_1 <= 22:
+        print('я не хочу спать!')
+        return
 
-# current_date_time = datetime.datetime.now()
-# current_time = current_date_time.time()
-# print(current_time)
-#
-#
-# current_date_time = datetime.time.now()
-# # print(current_date_time)
-#
-# def sleep():
-#     if (vivacity <= 50 and health <= 30) or (current_date_time = datetime.time(20,59,59)):
-#         print('Tamagotchi go to sleep')
-#     else:
-#         print('Tamagotchi does not sleep')
-#
-# sleep()
+    while self.vivacity <= 95 or time_1.hour < 7:
+        self.vivacity += 1
+        time.sleep(0.1)
+        print('Спокойной ночи, я пошел спать...')
+        print(self.vivacity)
+        time_1 = datetime.datetime.now()
