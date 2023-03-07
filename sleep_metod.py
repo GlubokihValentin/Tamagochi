@@ -4,8 +4,8 @@ import datetime
 
 def sleep_metod(self):
     time_1 = datetime.datetime.now()
-    if self.vivacity >= 30 and time_1 > 6 and time_1 <= 22:
-        print('я не хочу спать!')
+    if self.vivacity >= 30 and 6 < time_1 <= 22:
+        print('Я не хочу спать!')
         return
 
     while self.vivacity <= 95 or time_1.hour < 7:
