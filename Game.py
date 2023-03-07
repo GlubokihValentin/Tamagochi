@@ -1,11 +1,13 @@
 import datetime as date
 import sys, os , random
+from interface import listOfAnimal as list, indexOfListAnimal as index
+
 
 # a = date.datetime.now().time().second
 # print(a)
 # b = date.datetime.now().time().second
 # print(b)
-def wallAndHead():
+def wallAndHead(list[index]):
     try:
         n = 1
         a = 1
@@ -24,7 +26,7 @@ def wallAndHead():
                 case 2:
                     print('Очень жаль, тебе бы игра понравилась')
                     n = 0
-                    play()
+                    play(list[index])
                     break
             if a == 7:
                 print('Сорри наступила смерть')
@@ -41,9 +43,9 @@ def wallAndHead():
                     break
                 break
     except ValueError:
-        wallAndHead()
+        wallAndHead(list[index])
 
-def footbol():
+def footbol(list[index]):
     try:
         nFootbol = 1
         aFootbol = 1
@@ -55,29 +57,29 @@ def footbol():
             match(gameFotbool):
                 case 1:
                     ran = random.randint(1, 13)
-                    if tamagochi.a.mood <= 100:
+                    if list[index].mood <= 100:
                         if ran == 5 or ran == 7:
                             print('Я пропустил мяч, какая печаль =(')
-                            tamagochi.a.mood -= 5
-                            print(f'Произошло уменьшение шкалы счастья(mood) вашего питомца до {tamagochi.a.mood}')
+                            list[index].mood -= 5
+                            print(f'Произошло уменьшение шкалы счастья(mood) вашего питомца до {list[index].mood}')
                         elif ran != 5 and ran != 7:
                             print('Ура!!! Я поймал мяч')
                             # tamagochi.a.mood = tamagochi.a.mood + 5
-                            if tamagochi.a.mood < 100:
-                                tamagochi.a.mood += 5
-                                print(f'Произошло увеличение шкалы счастья(mood) вашего питомца  до {tamagochi.a.mood}')
-                    if tamagochi.a.mood == 100:
-                        print(f'Шкала счастья(mood) вашего питомца {tamagochi.a.mood}\n'
+                            if list[index].mood < 100:
+                                list[index].mood += 5
+                                print(f'Произошло увеличение шкалы счастья(mood) вашего питомца  до {list[index].mood}')
+                    if list[index].mood == 100:
+                        print(f'Шкала счастья(mood) вашего питомца {list[index].mood}\n'
                               f'Если хотите можете продолжить играть')
                 case 2:
                     print('Если хочешь, мы можем сыграть с тобой во что нибудь другое')
                     nFootbol = 0
-                    play()
+                    play(list[index])
                     break
     except ValueError:
-        footbol()
+        footbol(list[index])
 
-def hockey():
+def hockey(list[index]):
     try:
         nHokey = 1
         aHokey = 1
@@ -91,28 +93,28 @@ def hockey():
             match(hokeyGame):
                 case 1:
                     ran = random.randint(1, 13)
-                    if tamagochi.a.mood <= 100:
+                    if list[index].mood <= 100:
                         if ran == 5 or ran == 7:
                             print('Я пропустил шайбу, какая печаль =(')
-                            tamagochi.a.mood -= 5
-                            print(f'Произошло уменьшение шкалы счастья(mood) вашего питомца до {tamagochi.a.mood}')
+                            list[index].mood -= 5
+                            print(f'Произошло уменьшение шкалы счастья(mood) вашего питомца до {list[index].mood}')
                         elif ran != 5 or ran != 7:
                             print('Ура!!! Я поймал шайбу')
-                            if tamagochi.a.mood < 100:
-                                tamagochi.a.mood += 5
-                                print(f'Произошло увеличение шкалы счастья(mood) вашего питомца  до {tamagochi.a.mood}')
-                    if tamagochi.a.mood == 100:
-                        print(f'Шкала счастья(mood) вашего питомца {tamagochi.a.mood}\n'
+                            if list[index].mood < 100:
+                                list[index].mood += 5
+                                print(f'Произошло увеличение шкалы счастья(mood) вашего питомца  до {list[index].mood}')
+                    if list[index].mood == 100:
+                        print(f'Шкала счастья(mood) вашего питомца {list[index].mood}\n'
                               f'Если хотите можете продолжить играть')
                 case 2:
                     print('Если хочешь, мы можем сыграть с тобой во что нибудь другое!')
                     nHokey = 0
-                    play()
+                    play(list[index])
                     break
     except ValueError:
-        hockey()
+        hockey(list[index])
 
-def play(tamagjchi.a):# в скобках написать tamagjchi.a
+def play(list[index]):# в скобках написать tamagjchi.a
     try:
         print(f'{tamagjchi.a}, готов с тобой сыграть!!!\n' # дописать имя животного в начале {tamagochi.a}
           f'Выбери какая игра тебе более интересна :\n'
@@ -120,12 +122,12 @@ def play(tamagjchi.a):# в скобках написать tamagjchi.a
         game = int(input())
         match(game):
             case 1:
-                footbol()
+                footbol(list[index])
             case 2:
-                hockey()
+                hockey(list[index])
             case 3:
-                wallAndHead()
+                wallAndHead(list[index])
             case 0:
                 print('Выход в основное меню')
     except ValueError:
-        play()
+        play(list[index])
