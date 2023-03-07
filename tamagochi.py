@@ -1,4 +1,5 @@
 import random
+import time
 
 
 class Animal:
@@ -15,7 +16,6 @@ class Animal:
         self.vivacity = 10
         self.cleanliness = 0
         self.upbringing = 0
-
 
     @property
     def health(self):
@@ -82,44 +82,48 @@ class Animal:
         self._is_sleep = h
 
 
-
 Cat = Animal('Barsik', 'Cat', 'man', 'white')
 
 
-# def character_selection(self):
-#     print(
-#         f"Type: {self.type_of_animal}\n  Name: {self.name}\n Age: {self.age}\n Sex: {self.sex}\n Color: {self.color}\n "
-#         f"Health: {self.health}\n Hunger: {self.hunger}\n Craving: {self.craving}\n Mood: {self.mood}\n "
-#         f"Vivacity: {self.vivacity}\n Cleanliness: {self.cleanliness}\n Upbringing: {self.upbringing}")
+# def features(Cat):
+#     if
+
+def init_list():
+    listA = [28, 2, 30, 25, 15]
+    listB = []
+
+    for i in range(len(listA)):
+        p = 0
+
+        for j in range(i + 1):
+            p += listA[j]
+
+        listB.append(p)
+
+    print(listB)
+    return listB
 
 
-listA = [28, 2, 30, 25, 15]
-listB = []
-event = 0
+def init_event():
+    c = init_list()
+    event = 0
 
-for i in range(len(listA)):
-    p = 0
+    a = random.randint(1, 100)
+    print(a)
 
-    for j in range(i + 1):
-        p += listA[j]
+    for i in range(len(c)):
+        if a <= c[i]:
+            event = i + 1
+            break
 
-    listB.append(p)
-
-print(listB)
-
-a = random.randint(1, sum(listA))
-print(a)
-
-for i in range(len(listB)):
-    if a <= listB[i]:
-        event = i + 1
-        break
-
-print(event)
+    print(event)
+    return event
 
 
-def random_events() -> object:
-    match event:
+def random_events(Cat):
+    e = init_event()
+
+    match e:
         case 1:  # ранение
             print('Oh no! While you were away your pet got hurt! Take him to the vet immediately!')
             Cat.health = 10
@@ -147,9 +151,17 @@ def random_events() -> object:
                 print('Your pet snuck into the closet and scattered all the things')
 
         case 5:
-            print('Recently there was a strong storm and lightning flashed! Your pet is scared, he has a lot of stress')
+            print(
+                'Recently there was a strong storm and lightning flashed! Your pet is scared, he has a lot of stress')
             Cat.mood = 0
             Cat.health = 40
 
 
-random_events()
+def main(Cat):
+    random_events(Cat)
+
+
+while True:  # работает, но так лучше не делать. Переделаем, когда изучим ассинхронность
+    b = random.randint(12*3600, 24*3600)
+    time.sleep(b)
+    main(Cat)
